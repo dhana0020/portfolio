@@ -1,0 +1,444 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to bottom, #f4f0fc, #ffffff);
+  color: #333;
+  padding-top: 80px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  
+  padding: 15px 0px;
+  display: flex;
+  justify-content: space-between;  /* ✅ brand left, menu right */
+  align-items: center;
+   overflow-x: hidden;  /* Add this */
+  flex-wrap: wrap; 
+  background: transparent;
+  transition: 0.3s ease;
+  z-index: 1000;
+}
+
+
+
+.navbar.scrolled {
+  background: #fff; /* solid background on scroll */
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Brand / Logo */
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #6f42c1;  /* purple Meyawo theme */
+  margin: 0;       /* remove default h1 margin */
+}
+
+/* Navbar menu */
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+}
+
+.navbar-nav li a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #333;
+  transition: 0.3s;
+}
+
+.navbar-nav li a:hover {
+  color: #6f42c1; /* purple hover effect */
+}
+
+
+.about-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 60px 40px;
+  background: #f9f9f9;
+  flex-wrap: wrap;
+}
+
+.about-left img {
+  width: 180px;
+  height: auto;
+  border-radius: 12px;
+}
+
+.about-right {
+  max-width: 700px;
+}
+
+.about-right h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.about-right p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.about-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #6f42c1;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.about-btn:hover {
+  background: #532a9e;
+}
+
+#home {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align items to the left */
+  gap: 80px;                   /* Adjust spacing between image and text */
+  padding: 0 80px;
+  background: linear-gradient(to bottom, #ede7f6, #ffffff);
+  flex-wrap: wrap;
+}
+
+#home .home-right {
+  margin-left: 100px; /* adjust this value as needed */
+}
+
+.home-left {
+  
+  flex: 0 0 auto;
+
+
+  display: flex;
+  
+  align-items: center;
+}
+
+.hero-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%; /* makes it a circle */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* optional subtle shadow */
+  background-color: transparent; /* ensures no white box */
+}
+
+
+.home-right {
+
+  flex: 0 0 auto;
+  max-width: 500px;
+  /* margin-left: 200px;  adjust as needed */
+
+
+}
+
+
+.home-right h1 {
+  margin-bottom: 20px; /* space below heading */
+}
+
+.home-right p {
+  margin-bottom: 25px; /* space below paragraph */
+}
+
+
+.h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+  color: #4b2e83; /* dark purple for headings */
+}
+
+/* Buttons */
+.but {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #6f42c1; /* Meyawo purple */
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+.but:hover {
+  background: #5a32a3; /* darker purple on hover */
+}
+
+/* Certifications Grid */
+.cert-grid {
+  display: flex;
+  flex-wrap: wrap;          
+  justify-content: center;  
+  gap: 40px;  
+  margin: 30px auto;
+  max-width: 1200px;
+}
+
+.cert-card {
+  width: 220px;
+  height: 150px;
+  perspective: 1000px;
+}
+
+#certifications {
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.cert-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.cert-card:hover .cert-inner {
+  transform: rotateY(180deg);
+}
+
+.cert-front,
+.cert-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   border: 2px solid #6f42c1;
+  border-radius: 10px;
+ background: linear-gradient(to bottom, #f4f0fc, #ffffff);
+  font-weight: 600;
+  padding: 10px;
+}
+
+/* Purple Front text */
+.cert-front {
+  color: #6f42c1;
+}
+
+/* Purple Back flip */
+.cert-back {
+  background: #6f42c1;
+  color: #fff;
+  transform: rotateY(180deg);
+}
+
+/* Contact Section */
+#contact {
+  padding: 50px 20px;
+  text-align: center;
+  background:  #4b2e83;
+  border-top: 1px solid #ddd;
+}
+
+
+
+#contact h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff; /* dark purple title */
+}
+
+#contact a {
+  color:#fff;/* purple links */
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 600;
+}
+
+#contact a:hover {
+  color:grey;
+}
+
+/* Optional Hover Shadow for Flip Cards */
+.cert-card:hover {
+  box-shadow: 0 6px 15px rgba(111, 66, 193, 0.2);
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* ✅ Two per row */
+  gap: 40px; /* ✅ Add gap between both horizontally & vertically */
+  justify-content: center;
+  margin: 50px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.skill-card {
+  width: 90%;       /* ✅ Slightly smaller width */
+  height: 120px;    /* ✅ Slightly smaller height */
+  margin: auto;     /* ✅ Center each card in its column */
+  perspective: 1000px;
+  
+}
+
+.skill-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.skill-card:hover .skill-inner {
+  transform: rotateY(180deg);
+  z-index: 10;
+}
+
+.skill-front,
+.skill-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #f8f9fa;
+  font-weight: 600;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  border: 2px solid #6f42c1;
+}
+
+/* Front: Skill Name */
+.skill-front {
+  font-size: 1.1rem;
+  color: #6f42c1;
+}
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #4b2e83; /* Optional: purple theme */
+}
+
+
+/* Back: Details */
+.skill-back {
+  background: #6f42c1;
+  color: #fff;
+  transform: rotateY(180deg);
+  font-weight: 400;
+  font-size: 0.95rem;
+}
+#projects {
+  padding: 80px 30px;
+  background: transparent;
+  text-align: center;
+}
+
+#projects h2 {
+  font-size: 2.5rem;
+  color: #4b2e83; /* Dark purple */
+  margin-bottom: 40px;
+}
+
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.6);
+  border: 2px solid #6f42c1;
+  border-radius: 12px;
+  padding: 25px;
+  width: 400px;
+  text-align: left;
+  box-shadow: 0 6px 15px rgba(111, 66, 193, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card h3 {
+  color: #4b2e83;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.project-card .tags {
+  color: #6f42c1;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.project-card p {
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.project-card a {
+  color: #6f42c1;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 800px) {
+  .project-card {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .navbar-brand {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .navbar-nav li a {
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+  }
+}
